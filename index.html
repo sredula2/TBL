@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <img src="logo.jpg" alt="Logo" class="logo">
+    <div class="container mt-5">
+        <div id="loadingIndicator" style="display:none;">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="container mt-5">
+            <div id="userInfo" class="text-right mb-3" style="display: none;">
+                <span id="usernameDisplay"></span> | 
+                <span id="timeElapsed">Elapsed Time: 0 seconds</span>
+            </div>
+            
+            <div id="loginSection" class="text-center">
+                <h2 class="mb-4">Login</h2>
+
+                
+                <!-- Activity Dropdown -->
+                <select id="activity" class="form-control mb-3" required>
+                    <option value="" disabled selected>Select Activity</option>
+                </select>
+
+                <input type="text" id="username" class="form-control mb-3" placeholder="Username" required>
+                <input type="password" id="password" class="form-control mb-3" placeholder="Password" required>
+
+
+
+                <button class="btn btn-primary" onclick="sendLoginRequest()">Login</button>
+                <div id="loginResult" class="mt-3"></div>
+            </div>
+
+            <div id="getResult" style="display:none;">
+                <div class="tabs" id="tabContainer"></div>
+                <div class="tab-content" id="questionContainer"></div>
+                <button id="prevQuestionBtn" class="btn btn-secondary" onclick="showPreviousQuestion()" style="display:none;">Previous Question</button>
+                <button id="nextQuestionBtn" class="btn btn-secondary" onclick="showNextQuestion()" style="display:none;">Next Question</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Bootstrap JS (optional, if you want to use any Bootstrap JavaScript components) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

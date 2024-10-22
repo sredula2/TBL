@@ -1,0 +1,121 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    position: relative; /* Needed for absolute positioning of overlay */
+    z-index: -1; /* Puts the overlay behind other content */
+    opacity: 1; /* Set the opacity for the overlay */
+}
+
+.logo {
+    display: block; /* Ensures the logo is treated as a block element */
+    margin: 0 auto; /* Centers the logo horizontally */
+    width: 10vw; /* Sets the width to 10% of the viewport width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+h2 {
+    color: #3498db;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    transition: background 0.3s;
+}
+
+.tab.active {
+    background: #fff;
+    font-weight: bold;
+    border-bottom: 2px solid #3498db;
+}
+
+.tab:hover {
+    background: #d0d0d0;
+}
+
+.tab-content {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+#loadingIndicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: line-through;
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #28a745; /* Bootstrap success color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.btn:disabled {
+    background-color: gray;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.question {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 1em;
+}
